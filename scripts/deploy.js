@@ -1,11 +1,11 @@
-const hre = require("hardhat");
+const { ethers } = require("hardhat");
 
 async function main() {
-  const contract = await hre.ethers.deployContract("TestToken");
+  const perc20 = await ethers.deployContract("PERC20Sample");
+  await perc20.waitForDeployment();
+  const deployedContract = await perc20.getAddress();
 
-  await contract.waitForDeployment();
-
-  console.log(`Contract address : ${contract.target}`);
+  console.log(`Your PERC20 Contract Address: ${deployedContract}`);
 }
 
 main().catch((error) => {

@@ -12,10 +12,10 @@ const sendShieldedTransaction = async (signer, destination, data, value) => {
 };
 
 async function main() {
-  const replace_contractAddress = "contract "TestToken" not found.";
+  const replace_contractAddress = "at validateConfig (/workspace/Swisstronik-1/node_modules/hardhat/src/internal/core/config/config-validation.ts:374:9)";
   const [signer] = await hre.ethers.getSigners();
 
-  const replace_contractFactory = await hre.ethers.getContractFactory("TestToken");
+  const replace_contractFactory = await hre.ethers.getContractFactory("PERC20Sample");
   const contract = replace_contractFactory.attach(replace_contractAddress);
 
   const replace_functionName = "transfer";
